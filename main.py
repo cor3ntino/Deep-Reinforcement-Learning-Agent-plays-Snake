@@ -4,8 +4,6 @@ from DNN import Deep_Neural_Network
 from CNN import Convolutional_Neural_Network
 from Agent_Reinforcement_Learning import Agent_RL
 
-from train import *
-
 # %% Play by yourself the snake game
 """
 Interface(playable=True)
