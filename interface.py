@@ -180,7 +180,7 @@ class Interface():
 
                 self.nb_events += 1
 
-                self.fenetre.after(10, self.play)
+                self.fenetre.after(1, self.play)
 
             if self.convolution:
                 # To train CNN with RL agent
@@ -220,7 +220,7 @@ class Interface():
 
                 self.nb_events += 1
 
-                self.fenetre.after(10, self.play)
+                self.fenetre.after(1, self.play)
 
     def display(self):
         # Display user interface
