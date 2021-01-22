@@ -38,7 +38,7 @@ The first neural network is a simple 3-hidden-layers; each one made of 150 neuro
 
 Model:
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #
+Layer (type)                 Output Shape              Param
 =================================================================
 dense_1 (Dense)              (None, 150)               3300
 _________________________________________________________________
@@ -67,7 +67,7 @@ The second neural network is a convolution neural network with 3 Conv2D layers a
 
 Model:
 _________________________________________________________________
-Layer (type)                 Output Shape              Param #
+Layer (type)                 Output Shape              Param 
 =================================================================
 conv2d_1 (Conv2D)            (None, 32, 6, 6)          1184
 _________________________________________________________________
