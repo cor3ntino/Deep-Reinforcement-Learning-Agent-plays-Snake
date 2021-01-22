@@ -9,11 +9,7 @@ class Map:
     def __init__(self, snake):
         self.snake = snake
         self.structure = MAP
-        #self.add_food()
-        x, y = random.randint(3, 5), random.randint(3, 5)
-        while [x, y] in self.snake.body:
-            x, y = random.randint(3, 5), random.randint(3, 5)
-        self.food = [x, y]
+        self.add_food()
     
     def add_food(self):
 
