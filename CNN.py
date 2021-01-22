@@ -28,10 +28,10 @@ class Convolutional_Neural_Network:
     def return_value_NN(self, X):
         return(self.model.predict(X, verbose=0))
     
-    def save_mod(self, pourcentage):
+    def save_mod(self):
 
-        save_model(self.model, './saved_models/CNN_' + pourcentage + '.h5')
+        save_model(self.model, './saved_models/CNN.h5')
 
     def load_mod(self):
 
-        self.model = load_model('./saved_models/CNN_5000_3000_iterations_20_pourcents.h5')
+        self.model = load_model('./saved_models/CNN.h5')
