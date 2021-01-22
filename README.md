@@ -38,7 +38,7 @@ The first neural network is a simple 3-hidden-layers; each one made of 150 neuro
 
 Model Architecture:
 
-<img src="DNN_architecture.PNG"/>
+<img align="center" src="DNN_architecture.PNG"/>
 
 As input, the neural network get vectors of 21 data. These 21 data correspond to distances between head of snake and food (7 distances: right, left, front, front/right, front/left, back/right, back/left), distances between head of snake and walls (7 distances) and distances between head of snake and its own body (7 distances).
 
