@@ -37,17 +37,11 @@ To make the RL agent learn, I used 2 types of neural network.
 The first neural network is a simple 3-hidden-layers; each one made of 150 neurons with ReLU activation. The last layer is a 3-neurons layer with softmax activation, in order for the agent to take a decision among 3 possible actions (go straight ahead, turn right, turn left).
 
 Model:
-_________________________________________________________________
 Layer (type)                 Output Shape              Param
-_________________________________________________________________
 dense_1 (Dense)              (None, 150)               3300
-_________________________________________________________________
 dense_2 (Dense)              (None, 150)               22650
-_________________________________________________________________
 dense_3 (Dense)              (None, 150)               22650
-_________________________________________________________________
 dense_4 (Dense)              (None, 3)                 453
-_________________________________________________________________
 Total params: 49,053
 Trainable params: 49,053
 Non-trainable params: 0
@@ -68,21 +62,13 @@ The second neural network is a convolution neural network with 3 Conv2D layers a
 Model:
 _________________________________________________________________
 Layer (type)                 Output Shape              Param 
-_________________________________________________________________
 conv2d_1 (Conv2D)            (None, 32, 6, 6)          1184
-_________________________________________________________________
 conv2d_2 (Conv2D)            (None, 64, 4, 4)          18496
-_________________________________________________________________
 conv2d_3 (Conv2D)            (None, 128, 2, 2)         73856
-_________________________________________________________________
 flatten_1 (Flatten)          (None, 512)               0
-_________________________________________________________________
 dense_1 (Dense)              (None, 128)               65664
-_________________________________________________________________
 dense_2 (Dense)              (None, 128)               16512
-_________________________________________________________________
 dense_3 (Dense)              (None, 3)                 387
-_________________________________________________________________
 Total params: 176,099
 Trainable params: 176,099
 Non-trainable params: 0
