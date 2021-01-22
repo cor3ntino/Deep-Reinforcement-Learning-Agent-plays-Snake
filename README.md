@@ -10,7 +10,9 @@ The game of Snake is implemented following the famous rules: when the snake eats
 
 Thanks to Tkinter, I create a user interface where walls are displayed in grey, snake head is blue, snake body is green, food is red, and all empty spaces are white. Two buttons "PLAY" and "CLOSE" enable to start simmulation or to close Tkinter user interface.
 
+<p align="center">
 <img src="user_interface.PNG"/>
+</p>
 
 The interface has 3 different operating modes:
 - playable mode: only one Snake game is shown and you can control it with keyboard arrows 
@@ -38,7 +40,9 @@ The first neural network is a simple 3-hidden-layers; each one made of 150 neuro
 
 Model Architecture:
 
-<img align="center" src="DNN_architecture.PNG"/>
+<p align="center">
+<img src="DNN_architecture.PNG"/>
+</p>
 
 As input, the neural network get vectors of 21 data. These 21 data correspond to distances between head of snake and food (7 distances: right, left, front, front/right, front/left, back/right, back/left), distances between head of snake and walls (7 distances) and distances between head of snake and its own body (7 distances).
 
@@ -46,7 +50,9 @@ Thanks to that, he is able to learn to grow by hitting food, avoiding walls and 
 
 Here is some examples of agent playing after some training (training was stop when epsilon = 1% and reduction factor of epsilon was 0.99 every 64 steps of all simulated snakes):
 
-<img src="DNN.gif" width="75%"/>
+<p align="center">
+<img src="DNN.gif"/>
+</p>
 
 ### Convolutional Neural Network
 
@@ -54,14 +60,18 @@ The second neural network is a convolution neural network with 3 Conv2D layers a
 
 Model Architecture:
 
+<p align="center">
 <img src="CNN_architecture.PNG"/>
+</p>
 
 The model is supposed to take 4 images as input: the current frame and the last 3 frames in order, for the model, to take into account the direction of the snake. This configuration has been proven, by DeepMind researchers, to work better on Atari games.
 Here, instead of using real images of the the user interface, I use matrices of the game state. It avoids having to save and load .png frames from Tkinter user interface, which takes long time for each iteration (~ around 0.5 on my computer). Moreover, it enables me to make easily 8x8 matrices of the game state; it is very useful between CNN are very long to train and I only use my laptop to do so, thus having small frames (8x8 pixels) enables me to get a quicker training than if I had bigger frames (84x84 for instance). 
 
 Here is some examples of agent playing after training:
 
-<img src="CNN.gif" width="75%"/>
+<p align="center">
+<img src="CNN.gif"/>
+</p>
 
 ## Results
 
