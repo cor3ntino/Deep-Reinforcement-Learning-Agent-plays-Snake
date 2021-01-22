@@ -35,30 +35,15 @@ class Agent_RL():
         
         print('Loss: ', self.model.model.train_on_batch(np.array(inputs), np.array(targets)))
         print("Epsilon: ", self.epsilon, '\n')
-
-        """
+        
         if self.epsilon < 0.01:
-            # We save model when epsilon < 1 %
-            pourcentage = str(0.1)
-            self.model.save_mod(pourcentage)
+            # We stop training and save model when epsilon < 1 %
+            self.model.save_mod()
             return(True)
-        """
-        if self.count_train == 2000:
-            self.model.save_mod('5000_3000_2000_iterations_1_pourcents')
-            return(True)
+
         # We decrease epsilon as long as the model learn in order to make it more and more greddy
         self.epsilon *= 0.995
         return(False)
-        ## Perform an update of action-values
-        ## Following the Q-learning method
-        #self.q[self.prev_state, self.prev_action] += self.step_size * (reward + self.discount * current_q[np.argmax(current_q)] - self.q[self.prev_state, self.prev_action])
-        
-        ## Following the Expected Sarsa method
-        #idx_greedy = np.where(self.q[state, :] == current_q[np.argmax(current_q)])[0]
-        #pi = (self.epsilon / self.num_actions) * np.ones(self.q[state, :].shape)
-        #pi[idx_greedy] += (1 - self.epsilon) / len(idx_greedy)
-        #estim = np.matmul(self.q[state, :], np.transpose(pi))
-        #self.q[self.prev_state, self.prev_action] += self.step_size * (reward + self.discount * estim - self.q[self.prev_state, self.prev_action])
         
     def argmax(self, values):
         """
