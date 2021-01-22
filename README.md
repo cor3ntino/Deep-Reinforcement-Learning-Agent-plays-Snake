@@ -36,16 +36,9 @@ To make the RL agent learn, I used 2 types of neural network.
 
 The first neural network is a simple 3-hidden-layers; each one made of 150 neurons with ReLU activation. The last layer is a 3-neurons layer with softmax activation, in order for the agent to take a decision among 3 possible actions (go straight ahead, turn right, turn left).
 
-Model:
-Layer (type)                 Output Shape              Param
-dense_1 (Dense)              (None, 150)               3300
-dense_2 (Dense)              (None, 150)               22650
-dense_3 (Dense)              (None, 150)               22650
-dense_4 (Dense)              (None, 3)                 453
-Total params: 49,053
-Trainable params: 49,053
-Non-trainable params: 0
-_________________________________________________________________
+Model Architecture:
+
+<img src="DNN_architecture.png"/>
 
 As input, the neural network get vectors of 21 data. These 21 data correspond to distances between head of snake and food (7 distances: right, left, front, front/right, front/left, back/right, back/left), distances between head of snake and walls (7 distances) and distances between head of snake and its own body (7 distances).
 
@@ -59,20 +52,9 @@ Here is some examples of agent playing after some training (training was stop wh
 
 The second neural network is a convolution neural network with 3 Conv2D layers and 2 dense hidden-layers. The last layer is a 3-neurons layer with softmax activation, in order for the agent to take a decision among 3 possible actions (go straight ahead, turn right, turn left).
 
-Model:
-_________________________________________________________________
-Layer (type)                 Output Shape              Param 
-conv2d_1 (Conv2D)            (None, 32, 6, 6)          1184
-conv2d_2 (Conv2D)            (None, 64, 4, 4)          18496
-conv2d_3 (Conv2D)            (None, 128, 2, 2)         73856
-flatten_1 (Flatten)          (None, 512)               0
-dense_1 (Dense)              (None, 128)               65664
-dense_2 (Dense)              (None, 128)               16512
-dense_3 (Dense)              (None, 3)                 387
-Total params: 176,099
-Trainable params: 176,099
-Non-trainable params: 0
-_________________________________________________________________
+Model Architecture:
+
+<img src="CNN_architecture.png"/>
 
 The model is supposed to take 4 images as input: the current frame and the last 3 frames in order, for the model, to take into account the direction of the snake. This configuration has been proven, by DeepMind researchers, to work better on Atari games.
 Here, instead of using real images of the the user interface, I use matrices of the game state. It avoids having to save and load .png frames from Tkinter user interface, which takes long time for each iteration (~ around 0.5 on my computer). Moreover, it enables me to make easily 8x8 matrices of the game state; it is very useful between CNN are very long to train and I only use my laptop to do so, thus having small frames (8x8 pixels) enables me to get a quicker training than if I had bigger frames (84x84 for instance). 
