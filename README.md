@@ -78,3 +78,5 @@ Here is some examples of agent playing after training:
 Two models are pretrained in "saved_models" folder, so you can try simulations on your own laptop. One for the the simple neural network "DNN.h5", one for the convolution network "CNN.h5".
 
 Nevertheless, you can notice that the DNN is better than the CNN one. Indeed, if you want to train your own model, you have to keep in mind that training a CNN is very long before having some good results; especially if you do not have a GPU, like me.
+
+Next steps should be to use Double Q-Learning in order to avoid overestimation of of Q-values, and train neural networks (particularly CNN) longer and with GPU and cuda.
